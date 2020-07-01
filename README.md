@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Smarkets - Take Home Test
+This is my version of the application that was asked to be created as part of the smarkets take home test.
 
-## Available Scripts
+It makes use of the smarkets API to retrieve data on popular events and displays them in a minimalistic design.
 
-In the project directory, you can run:
+The popular events will be displayed after a short loading screen.
 
-### `yarn start`
+Clicking on a popular event will open up an event summary, with basic information regarding to its status and type.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The timers are not static, so as time passes they should dynamically update.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Installation and Building
+First of all navigate to the smarkets-tht directory using:
 
-### `yarn test`
+`cd smarkets-tht`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Next install the dependancies using yarn:
 
-### `yarn build`
+`yarn`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To build and run the application type the following in the same directory:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Comments
+Given more time, the solution could be improved in many ways.
 
-### `yarn eject`
+For example, although work has gone into making it as accessible as possible with the inclusion of svg tags and responsive sizing, there are still many areas where it could be improved upon. One such improvement would be the introduction of colorblind customization. Currently, the application uses green and red hues to indicate at a glance event statuses, however ideally the user would be able to customize these to suite.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Additionally, the introduction of a store like redux would make expanding the application easier.
+Although the management of props and callback functions in an application of this size is manageable, if it would to be expanded upon then in this aspect it could begin to become unwieldly. Additionally, due to its nature, redux would offer improved safety in regards to state errors.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Lastly, the application itself is very basic, and although functional, it doesn't offer much benefit to the user.
+It would be nice to be able to add more to the event details display, such as event stats like referee decisions, possibly even in chronological order with the implementation of a timeline component -> which if designed correctly could act as a nice visual summary of the event.
