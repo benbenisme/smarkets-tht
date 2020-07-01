@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import BackButton from './Components/BackButton/BackButton';
+import React from 'react';
 import Event from './Components/Event/Event';
 import EventPreview from './Components/EventPreview/EventPreview';
 import {
@@ -64,7 +63,7 @@ class App extends React.Component {
     if (livePopularEvents.length > 0) {
     const livePopularEventStatesResponse = await this.fetchAPIHandler(`${corsURL}${smarketURL}events/${livePopularEvents}/states`); 
     // reduce into a keyed object      
-    const livePopularEventStates = livePopularEvents? livePopularEventStatesResponse["event_states"].reduce((map, event) => (map[event.id] = event, map), {}) : null;
+    livePopularEventStates = livePopularEvents? livePopularEventStatesResponse["event_states"].reduce((map, event) => (map[event.id] = event, map), {}) : null;
     }
 
     //map popular events into an array of their parent events - used to find league of child event
@@ -88,10 +87,7 @@ class App extends React.Component {
     const eventPreviews = Object.values(popularEvents).sort((a,b) => new Date(a.start_datetime) - new Date(b.start_datetime))
     .map(event => <EventPreview currentDateTimeISO8061={this.state.currentDateTimeISO8061} key={event.id} event={event}/>);
 
-    console.log(eventPreviews);
-
-    this.setState({popularEvents: popularEvents});
-    this.setState({eventPreviews: eventPreviews});
+    this.setState({popularEvents: popularEvents, eventPreviews: eventPreviews});
     this.deactivateLoadingPage();
   }
 
@@ -102,7 +98,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="appContainer">
-        {/* Main page switch display */}
+        {/* Main page display */}
         {this.state.initialDataIsLoading ? (<LoadingPage title={'Getting Events'} />
         ) : (
             <Switch>

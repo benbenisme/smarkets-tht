@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './EventList.css'
 
 export default function EventList(props) {  

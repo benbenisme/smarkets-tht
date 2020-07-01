@@ -1,13 +1,10 @@
 import React from 'react';
-import {
-    Link
-} from "react-router-dom";
-import {CalculateDateTimeDifferenceInMinutes} from '../../Helpers/DateTimeHelper';
+import { Link } from "react-router-dom";
+import { CalculateDateTimeDifferenceInMinutes } from '../../Helpers/DateTimeHelper';
 import Icon from '../Icon/Icon';
 import {EventDisplayNameSelector, 
     EventDisplayTimeConfigSelector} from '../../Helpers/EventDisplayHelper';
 import './EventPreview.css'
-import {smarketTheme} from '../../Style/Themes';
 import ScoreDisplay from '../ScoreDisplay/ScoreDisplay';
 
 export default function EventPreview(props) {
@@ -16,43 +13,43 @@ export default function EventPreview(props) {
     const timeDisplay = timeDisplayConfig.displayTimeString;
     const timeDisplayIconType = timeDisplayConfig.displayTimeIconType;
     const timeDisplayColour = timeDisplayConfig.displayTimeColour;
-    const eventDisplayName = EventDisplayNameSelector(props.event);    
-        return (
-            <li className="event-preview-container">
-                <Link
-                    style={{ textDecoration: 'none' }}
-                    to={{
-                        pathname: "/Event",
-                        state: {
-                            event: props.event,
-                            timeDisplay: timeDisplay,
-                            eventDisplayName: eventDisplayName,
-                            timeDisplayColour: timeDisplayColour,
-                            timeDisplayIconType: timeDisplayIconType
-                        }
-                    }}>
-                    <div className="event-preview-inner-container">
-                        <div className="event-icon-container">
-                            <Icon componentIdentifier={'eventPreviewEvent'} type={props.event.type} />
+    const eventDisplayName = EventDisplayNameSelector(props.event);
+    return (
+        <li className="event-preview-container">
+            <Link
+                style={{ textDecoration: 'none' }}
+                to={{
+                    pathname: "/Event",
+                    state: {
+                        event: props.event,
+                        timeDisplay: timeDisplay,
+                        eventDisplayName: eventDisplayName,
+                        timeDisplayColour: timeDisplayColour,
+                        timeDisplayIconType: timeDisplayIconType
+                    }
+                }}>
+                <div className="event-preview-inner-container">
+                    <div className="event-icon-container">
+                        <Icon componentIdentifier={'eventPreviewEvent'} type={props.event.type} />
+                    </div>
+                    <div className="event-preview-text-container">
+                        <div className="event-preview-title">
+                            <label>{eventDisplayName}</label>
                         </div>
-                        <div className="event-preview-text-container">
-                            <div className="event-preview-title">
-                                <label>{eventDisplayName}</label>
+                        <div className="event-preview-time-container">
+                            <div className="event-preview-time-icon">
+                                <Icon componentIdentifier={'eventPreviewTimer'} type={timeDisplayIconType} colour={timeDisplayColour} />
                             </div>
                             <div className="event-preview-time-container">
-                                <div className="event-preview-time-icon">
-                                    <Icon componentIdentifier={'eventPreviewTimer'} type={timeDisplayIconType} colour={timeDisplayColour}/>
-                                </div>
-                                <div className="event-preview-time-container">
-                                    <label className="event-preview-time" style={{ color: timeDisplayColour }}>{timeDisplay}</label>
-                                </div>
+                                <label className="event-preview-time" style={{ color: timeDisplayColour }}>{timeDisplay}</label>
                             </div>
                         </div>
-                        <div className="score-display-container">
-                            <ScoreDisplay className={'preview-score-display'} scores={props.event.scores} orientation={'column'}/>
-                        </div>
                     </div>
-                </Link>
-            </li>
-        )
+                    <div className="score-display-container">
+                        <ScoreDisplay className={'preview-score-display'} scores={props.event.scores} orientation={'column'} />
+                    </div>
+                </div>
+            </Link>
+        </li>
+    )
 }
