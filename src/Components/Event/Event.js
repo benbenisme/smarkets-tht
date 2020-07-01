@@ -6,7 +6,7 @@ import { smarketTheme } from '../../Style/Themes';
 
 export default function Event(props) {
     const scores = props.props.event.scores
-    const matchPeriod = props.props.event.match_period;
+    const matchPeriod = props.props.event.match_period.replace('_', ' ');
     const bettable = props.props.event.bettable && props.props.event.state !== 'ended';
     return (
         <div className="event-container" style={{border: bettable ? `2px solid ${smarketTheme.open}` : `2px solid ${smarketTheme.closed}`}}>           

@@ -6,7 +6,6 @@ import {
   Route,
   withRouter
 } from "react-router-dom";
-import '../src/Style/Style.css';
 import EventList from './Components/EventList/EventList';
 import LoadingPage from './Components/LoadingPage/LoadingPage';
 import'./App.css'
