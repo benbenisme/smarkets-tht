@@ -6,7 +6,7 @@ import { smarketTheme } from '../../Style/Themes';
 
 export default function Event(props) {
     const scores = props.routerState.event.scores
-    const matchPeriod = props.routerState.event.match_period ? props.routerState.event.match_period.replace('_','') : null;
+    const matchPeriod = props.routerState.event.match_period ? props.routerState.event.match_period.replace('_',' ') : null;
     const bettable = props.routerState.event.bettable && props.routerState.event.state !== 'ended';
     return (
         <div className="event-container" style={{border: bettable ? `2px solid ${smarketTheme.open}` : `2px solid ${smarketTheme.closed}`}}>           
