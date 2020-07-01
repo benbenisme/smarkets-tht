@@ -14,19 +14,20 @@ export default function EventPreview(props) {
     const timeDisplayIconType = timeDisplayConfig.displayTimeIconType;
     const timeDisplayColour = timeDisplayConfig.displayTimeColour;
     const eventDisplayName = EventDisplayNameSelector(props.event);
+    const stateToPersist = {
+        event: props.event,
+        timeDisplay: timeDisplay,
+        eventDisplayName: eventDisplayName,
+        timeDisplayColour: timeDisplayColour,
+        timeDisplayIconType: timeDisplayIconType
+    }; 
     return (
         <li className="event-preview-container">
             <Link
                 style={{ textDecoration: 'none' }}
                 to={{
                     pathname: "/Event",
-                    state: {
-                        event: props.event,
-                        timeDisplay: timeDisplay,
-                        eventDisplayName: eventDisplayName,
-                        timeDisplayColour: timeDisplayColour,
-                        timeDisplayIconType: timeDisplayIconType
-                    }
+                    state: stateToPersist
                 }}>
                 <div className="event-preview-inner-container">
                     <div className="event-icon-container">

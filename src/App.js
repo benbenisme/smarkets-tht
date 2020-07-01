@@ -27,7 +27,7 @@ class App extends React.Component {
     this.getData();
     this.timeInterval = setInterval(() => {
       this.setState({ currentDateTimeISO8061: new Date().toISOString() }); 
-      // this.getData();
+      this.getData();
     }
     , 60000);    
   }
@@ -113,7 +113,7 @@ class App extends React.Component {
               <Route exact path="/Event">
                 <div className="event-page-container">
                   <div className="event-page-event">
-                    <Event props={this.props.location.state} />
+                    <Event routerState={this.props.location.state}/>
                   </div>
                   <div className="event-page-event-list">
                     <EventList eventListClassName={"eventPage"} eventPreviews={this.state.eventPreviews} />
