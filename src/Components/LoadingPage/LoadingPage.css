@@ -1,0 +1,22 @@
+.loading-page-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 100vh;
+}
+
+.loading-page-title-container {
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    padding-top: 5rem;
+}
+
+.loading-page-animation-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-top: 5rem;
+}

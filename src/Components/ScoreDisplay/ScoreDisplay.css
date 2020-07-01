@@ -1,0 +1,24 @@
+.preview-score-display {    
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-left: auto;
+    padding-right: 0.4rem;
+}
+
+.event-score-display {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 0;
+    padding-right: 0;
+}
+
+.score-display-first {
+    padding: 0 5px;
+}
+.score-display-second {
+    padding: 0 5px;
+}

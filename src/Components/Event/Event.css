@@ -1,0 +1,78 @@
+.event-container {
+    flex-direction: column;
+    display: flex;
+    background: #1a1a1a; 
+    height: 100%;
+    width: 74vw;
+    position: fixed;
+    margin: 1rem;    
+    color: white;  
+    padding-top: 3rem;
+    font-size: 3.5rem;
+}
+
+.event-title {
+    color: white;
+}
+
+.event-header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    flex-wrap: wrap;
+}
+
+.event-time-icon {
+    padding-top: 0.45rem;
+    padding-right: 0.4rem;
+}
+
+.event-time-display-container {
+    flex-direction: row;
+    display: flex;
+}
+.event-time-container {
+    padding-left: 0.5rem;
+}
+
+.event-body-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-title-container {
+    text-align: center;
+    padding-top: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.event-score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.event-score-display {
+    justify-content: center;
+    margin-left: 0;
+    padding-left: 0;    
+}
+
+.event-status-container {
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.event-bettable-status-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding-top: 4rem;
+}

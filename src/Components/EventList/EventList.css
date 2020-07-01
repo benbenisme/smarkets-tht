@@ -1,0 +1,28 @@
+.event-list-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.event-list-previews-container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.event-list-container {
+    right: 0;
+    text-align: left;
+}
+
+.event-list-title-container {
+    background: #252525;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;  
+    height: 50px;
+    margin-left: .4rem;
+}
